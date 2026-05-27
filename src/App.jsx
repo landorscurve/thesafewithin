@@ -248,7 +248,7 @@ function LandingScreen({ onBegin, onPrivacy, onPrinciples }) {
   return (
     <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', minHeight:'100dvh', padding:'40px 24px', animation:'fadeIn 1.2s ease both' }}>
       <div style={{ maxWidth:'400px', width:'100%', textAlign:'center', animation:'fadeUp 1.4s ease both' }}>
-        <img src="/logo.png" alt="The Safe Within" style={{ width:'160px', margin:'0 auto 32px', display:'block', opacity:0.95 }} />
+        <img src="/Logo.svg" alt="The Safe Within" style={{ width:'160px', margin:'0 auto 32px', display:'block', opacity:0.95 }} />
         <h1 style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'clamp(26px,5vw,36px)', fontWeight:400, color:C.text, letterSpacing:'-0.02em', lineHeight:1.3, margin:'0 0 18px' }}>
           Your thoughts.<br/>Your patterns.<br/>Your control.
         </h1>
