@@ -180,7 +180,7 @@ function NavBtn({ onClick, children, style={} }) {
   const [h, setH] = useState(false)
   return (
     <button onClick={onClick} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
-      style={{ background:'transparent', border:'none', cursor:'pointer', fontFamily:"'Lato', sans-serif", fontSize:'12px', fontWeight:300, letterSpacing:'0.08em', textTransform:'uppercase', padding:'8px', color: h ? C.textMid : C.textFaint, transition:'color 0.3s', ...style }}>
+      style={{ background:'transparent', border:'none', cursor:'pointer', fontFamily:"'Lato', sans-serif", fontSize:'12px', fontWeight:300, letterSpacing:'0.08em', textTransform:'uppercase', padding:'8px', color: h ? C.text : C.textMid, transition:'color 0.3s', ...style }}>
       {children}
     </button>
   )
@@ -209,7 +209,7 @@ function VoiceModal({ onSubmit, onClose }) {
           <NavBtn onClick={onClose}>Cancel</NavBtn>
         </div>
         <p style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'18px', color:C.textMid, lineHeight:1.7, marginBottom:'8px' }}>Paste your transcribed voice note here.</p>
-        <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'12px', color:C.textFaint, lineHeight:1.6, marginBottom:'20px' }}>It will be read in full. A brief summary will be saved. The conversation begins from what matters most.</p>
+        <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'12px', color:C.textDim, lineHeight:1.6, marginBottom:'20px' }}>It will be read in full. A brief summary will be saved. The conversation begins from what matters most.</p>
         <textarea value={text} onChange={e=>setText(e.target.value)} placeholder="Paste here..." rows={14} autoFocus
           style={{ width:'100%', background:'rgba(178,204,214,0.03)', border:`1px solid ${C.border}`, borderRadius:'3px', outline:'none', resize:'vertical', fontFamily:"'Lato', sans-serif", fontSize:'14px', color:C.text, lineHeight:1.75, caretColor:C.orb, padding:'16px 18px' }}
           onFocus={e=>e.target.style.borderColor=C.borderMid} onBlur={e=>e.target.style.borderColor=C.border} />
@@ -248,12 +248,13 @@ function LandingScreen({ onBegin, onPrivacy, onPrinciples }) {
   return (
     <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', minHeight:'100dvh', padding:'40px 24px', animation:'fadeIn 1.2s ease both' }}>
       <div style={{ maxWidth:'400px', width:'100%', textAlign:'center', animation:'fadeUp 1.4s ease both' }}>
-<img src="/Logo.svg" alt="The Safe Within" style={{ width:'260px', margin:'0 auto 32px', display:'block', opacity:0.95 }} />        <h1 style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'clamp(26px,5vw,36px)', fontWeight:400, color:C.text, letterSpacing:'-0.02em', lineHeight:1.3, margin:'0 0 18px' }}>
+        <img src="/Logo.svg" alt="The Safe Within" style={{ width:'260px', margin:'0 auto 32px', display:'block', opacity:0.95 }} />
+        <h1 style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'clamp(26px,5vw,36px)', fontWeight:400, color:C.text, letterSpacing:'-0.02em', lineHeight:1.3, margin:'0 0 18px' }}>
           Your thoughts.<br/>Your patterns.<br/>Your control.
         </h1>
         <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'15px', fontWeight:300, color:C.textMid, lineHeight:1.7, margin:'0 0 6px' }}>Built for honest reflection, privacy, and personal growth.</p>
-        <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:300, color:C.textDim, lineHeight:1.65, margin:'0 0 6px' }}>A private space for personal growth through reflection.</p>
-        <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'11px', fontWeight:300, color:C.textFaint, letterSpacing:'0.1em', textTransform:'uppercase', margin:'0 0 40px' }}>You control what is remembered</p>
+        <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:300, color:C.textMid, lineHeight:1.65, margin:'0 0 6px' }}>A private space for personal growth through reflection.</p>
+        <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'11px', fontWeight:300, color:C.textDim, letterSpacing:'0.1em', textTransform:'uppercase', margin:'0 0 40px' }}>You control what is remembered</p>
         <button onClick={onBegin} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
           style={{ background:h?'rgba(178,204,214,0.18)':'rgba(178,204,214,0.1)', border:`1px solid ${h?'rgba(178,204,214,0.45)':'rgba(178,204,214,0.3)'}`, color:C.text, fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:400, letterSpacing:'0.14em', textTransform:'uppercase', padding:'16px 40px', borderRadius:'2px', cursor:'pointer', transition:'all 0.4s', width:'100%', marginBottom:'12px' }}>
           Begin
@@ -279,7 +280,7 @@ function MemoryScreen({ onContinue }) {
     <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', minHeight:'100dvh', padding:'40px 24px', animation:'fadeIn 0.8s ease both' }}>
       <div style={{ maxWidth:'360px', textAlign:'center' }}>
         <p style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'20px', color:C.textMid, lineHeight:1.75, margin:'0 0 12px' }}>This session will not retain memory after you leave.</p>
-        <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:300, color:C.textFaint, lineHeight:1.8, margin:'0 0 40px' }}>A new session will begin the next time you return.</p>
+        <p style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:300, color:C.textDim, lineHeight:1.8, margin:'0 0 40px' }}>A new session will begin the next time you return.</p>
         <button onClick={()=>onContinue('temp')} style={{ background:'transparent', border:`1px solid ${C.border}`, color:C.textDim, fontFamily:"'Lato', sans-serif", fontSize:'12px', letterSpacing:'0.1em', textTransform:'uppercase', padding:'12px 32px', borderRadius:'2px', cursor:'pointer', transition:'all 0.3s' }}>Continue</button>
       </div>
     </div>
@@ -295,7 +296,7 @@ function MemoryScreen({ onContinue }) {
               onMouseEnter={e=>{ if(selected!==o.id) e.currentTarget.style.borderColor=C.borderMid }}
               onMouseLeave={e=>{ if(selected!==o.id) e.currentTarget.style.borderColor=C.border }}>
               <div style={{ fontFamily:"'Lato', sans-serif", fontSize:'14px', fontWeight:400, color:selected===o.id?C.text:C.textMid, marginBottom:'4px', transition:'color 0.3s' }}>{o.label}</div>
-              <div style={{ fontFamily:"'Lato', sans-serif", fontSize:'12px', fontWeight:300, color:C.textFaint, lineHeight:1.5 }}>{o.desc}</div>
+              <div style={{ fontFamily:"'Lato', sans-serif", fontSize:'12px', fontWeight:300, color:C.textDim, lineHeight:1.5 }}>{o.desc}</div>
             </div>
           ))}
         </div>
@@ -324,7 +325,7 @@ function PrivacyScreen({ onBack }) {
         {items.map(([t,b],i) => (
           <div key={i} style={{ marginBottom:'24px', animation:`reveal 0.5s ease both ${i*0.08+0.1}s` }}>
             <div style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:400, color:C.textMid, marginBottom:'4px' }}>{t}</div>
-            <div style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:300, color:C.textFaint, lineHeight:1.65 }}>{b}</div>
+            <div style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:300, color:C.textDim, lineHeight:1.65 }}>{b}</div>
           </div>
         ))}
         <NavBtn onClick={onBack} style={{ paddingLeft:0, marginTop:'8px' }}>← Back</NavBtn>
@@ -348,7 +349,7 @@ function PrinciplesScreen({ onBack }) {
         {items.map(([t,b],i) => (
           <div key={i} style={{ marginBottom:'26px', animation:`reveal 0.5s ease both ${i*0.08+0.1}s` }}>
             <div style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'16px', fontWeight:400, color:C.textMid, marginBottom:'6px' }}>{t}</div>
-            <div style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:300, color:C.textFaint, lineHeight:1.75 }}>{b}</div>
+            <div style={{ fontFamily:"'Lato', sans-serif", fontSize:'13px', fontWeight:300, color:C.textDim, lineHeight:1.75 }}>{b}</div>
           </div>
         ))}
         <NavBtn onClick={onBack} style={{ paddingLeft:0, marginTop:'8px' }}>← Back</NavBtn>
